@@ -5,28 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sigma – Asesoría de Tesis | Cusco & Online</title>
   <meta name="description" content="Asesoría personalizada para tesis: formateo APA/Vancouver/ISO, informes Turnitin, ensayos de sustentación. Atención en Cusco y a nivel nacional.">
-  
-  <!-- Preconexión para mejorar rendimiento -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  
-  <!-- Fuentes de Google (con fallback) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome (con fallback local) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  
-  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <!-- Estilos principales con fallbacks -->
   <style>
     :root {
-      --navy: #0a1429;
+      --navy: #0a1429; /* azul marino más oscuro */
       --navy-2: #0d1a33;
       --navy-light: #152642;
-      --gold: #c89b3c;
+      --gold: #c89b3c; /* dorado */
       --gold-2: #f0c872;
       --gold-light: #f8e3b4;
       --cloud: #f6f8fb;
@@ -40,28 +29,6 @@
       --transition: all 0.3s ease;
     }
 
-    /* Fallback font en caso de que Google Fonts falle */
-    @font-face {
-      font-family: 'Inter Fallback';
-      font-style: normal;
-      font-weight: 300;
-      src: local('Helvetica Neue Light'), local('Helvetica Light'), local('Arial Nova Light');
-    }
-    
-    @font-face {
-      font-family: 'Inter Fallback';
-      font-style: normal;
-      font-weight: 400;
-      src: local('Helvetica Neue'), local('Helvetica'), local('Arial');
-    }
-    
-    @font-face {
-      font-family: 'Inter Fallback';
-      font-style: normal;
-      font-weight: 600;
-      src: local('Helvetica Neue Bold'), local('Helvetica Bold'), local('Arial Bold');
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -69,8 +36,7 @@
     }
 
     html, body {
-      /* Fuente principal con fallback */
-      font-family: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--black);
       background: var(--cloud);
       scroll-behavior: smooth;
@@ -336,6 +302,11 @@
       border-color: var(--gold);
     }
 
+    .image-upload-input i {
+      font-size: 24px;
+      color: var(--gold);
+    }
+
     .image-upload-input span {
       font-size: 14px;
     }
@@ -476,6 +447,13 @@
       font-size: 20px;
       color: var(--navy);
       margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mission-vision-item h4 i {
+      color: var(--gold);
     }
 
     .mission-vision-item p {
@@ -549,8 +527,14 @@
       list-style: none;
     }
 
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
     summary::after {
-      content: '▼';
+      content: '\f078';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
       font-size: 14px;
       transition: var(--transition);
     }
@@ -652,7 +636,6 @@
       flex-direction: column;
       gap: 12px;
       z-index: 50;
-      display: none; /* Oculto inicialmente para móviles */
     }
 
     .float {
@@ -774,8 +757,8 @@
         gap: 30px;
       }
       
-      .sticky-cta {
-        display: flex; /* Mostrar en móviles */
+      .nav .actions {
+        display: none;
       }
     }
     
@@ -797,36 +780,15 @@
         justify-content: center;
       }
     }
-
-    /* Fallback para iconos de FontAwesome */
-    .icon-fallback {
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-      background-color: currentColor;
-      mask-size: cover;
-      -webkit-mask-size: cover;
-    }
   </style>
-  
-  <!-- Fallback scripts en caso de que las CDNs fallen -->
-  <noscript>
-    <style>
-      /* Estilos cuando JavaScript está deshabilitado */
-      [data-aos] {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-    </style>
-  </noscript>
 </head>
 <body>
   <!-- NAV -->
   <nav class="nav" id="navbar">
     <div class="wrap">
       <div class="brand">
-        <!-- Logo con imagen local -->
-        <img src="imagen/sigma.png" alt="Logo Sigma" class="logo" style="object-fit: contain; padding: 5px;" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%23c89b3c\"/><text x=\"50\" y=\"60\" font-size=\"40\" text-anchor=\"middle\" fill=\"%230a1429\">Σ</text></svg>'">
+        <!-- Aquí usamos tu imagen local para el logo -->
+        <img src="imagen/sigma.png" alt="Logo Sigma" class="logo" style="object-fit: contain; padding: 5px;">
         <h1>Sigma · Asesoría de Tesis</h1>
       </div>
       <div class="actions">
@@ -900,7 +862,6 @@
     </div>
   </header>
 
-  <!-- Resto del contenido se mantiene igual que en la versión anterior -->
   <!-- SERVICIOS -->
   <section class="section" id="servicios">
     <h3 class="section-title" data-aos="fade-right">Servicios principales</h3>
@@ -928,68 +889,189 @@
     </div>
   </section>
 
-  <!-- ... (el resto del contenido es igual) ... -->
+  <!-- ABOUT US -->
+  <section class="section" id="about">
+    <h3 class="section-title" data-aos="fade-right">Sobre nosotros</h3>
+    <div class="about-content" data-aos="fade-up">
+      <div class="mission-vision">
+        <div class="mission-vision-item">
+          <h4><i class="fas fa-bullseye"></i> Misión</h4>
+          <p>Guiamos a cada cliente, paso a paso, en la creación de su trabajo de titulación. Ofrecemos un servicio personalizado, confiable y de alta calidad para que alcancen sus metas académicas y profesionales. Nos enfocamos en que sea una experiencia eficiente, sin presiones innecesarias, y siempre buscando la excelencia de nuestro servicio.</p>
+        </div>
+        <div class="mission-vision-item">
+          <h4><i class="fas fa-eye"></i> Visión</h4>
+          <p>Aspiramos a ser líderes en el sector académico, reconocidos por la calidad, la originalidad y la puntualidad que brinda nuestro servicio. Queremos construir una comunidad donde se fomente el conocimiento, la investigación, la discusión con fundamento y por supuesto, el éxito en la culminación de sus estudios.</p>
+        </div>
+      </div>
+      <div>
+        <!-- Aquí puedes agregar otra imagen local si lo deseas -->
+        <img src="imagen/equipo-sigma.jpg" alt="Equipo Sigma" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow);" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=500'">
+      </div>
+    </div>
+  </section>
 
-  <script>
-    // Detectar si las CDNs cargaron correctamente
-    function checkFontAwesome() {
-      // Verificar si FontAwesome cargó
-      const testIcon = document.createElement('i');
-      testIcon.className = 'fa fa-font-awesome';
-      document.body.appendChild(testIcon);
-      const style = window.getComputedStyle(testIcon);
-      const fontFamily = style.fontFamily || '';
-      document.body.removeChild(testIcon);
-      
-      return fontFamily.includes('FontAwesome');
-    }
-    
-    function checkGoogleFonts() {
-      // Verificar si las fuentes de Google cargaron
-      return document.fonts.check('1em Inter');
-    }
-    
-    // Aplicar fallbacks si es necesario
-    setTimeout(() => {
-      if (!checkFontAwesome()) {
-        console.log('FontAwesome no cargó, aplicando fallbacks');
-        document.querySelectorAll('i').forEach(icon => {
-          const classes = icon.className;
-          if (classes.includes('fa-calendar-check')) icon.textContent = '📅';
-          else if (classes.includes('fa-arrow-right')) icon.textContent = '→';
-          else if (classes.includes('fa-facebook')) icon.textContent = 'f';
-          else if (classes.includes('fa-instagram')) icon.textContent = 'ig';
-          else if (classes.includes('fa-cloud-upload-alt')) icon.textContent = '📁';
-          else if (classes.includes('fa-paper-plane')) icon.textContent = '📨';
-          else if (classes.includes('fa-graduation-cap')) icon.textContent = '🎓';
-          else if (classes.includes('fa-book')) icon.textContent = '📚';
-          else if (classes.includes('fa-search')) icon.textContent = '🔍';
-          else if (classes.includes('fa-presentation-screen')) icon.textContent = '📊';
-        });
-      }
-      
-      if (!checkGoogleFonts()) {
-        console.log('Google Fonts no cargaron, usando fuentes de fallback');
-        document.body.style.fontFamily = 'Inter Fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-      }
-    }, 1000);
-  </script>
+  <!-- PROCESO / TIMELINE -->
+  <section class="section" id="proceso">
+    <h3 class="section-title" data-aos="fade-right">Cómo trabajamos</h3>
+    <div class="timeline">
+      <div class="step" data-aos="fade-up" data-aos-delay="0">
+        <div class="num">1</div>
+        <strong>Diagnóstico</strong>
+        <p><small>Evaluamos tu caso y objetivos.</small></p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="100">
+        <div class="num">2</div>
+        <strong>Plan de acción</strong>
+        <p><small>Entregables por semana y cronograma.</small></p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="200">
+        <div class="num">3</div>
+        <strong>Ejecución</strong>
+        <p><small>Revisión, ajustes de formato y soporte.</small></p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="300">
+        <div class="num">4</div>
+        <strong>Sustentación</strong>
+        <p><small>Ensayos y preparación final.</small></p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Scripts al final del body para mejor rendimiento -->
+  <!-- BENEFICIOS -->
+  <section class="section">
+    <h3 class="section-title" data-aos="fade-right">¿Por qué Sigma?</h3>
+    <div class="cards">
+      <article class="card" data-aos="fade-up" data-aos-delay="0">
+        <h4><i class="fas fa-globe-americas" style="color:var(--gold);"></i> Atención nacional</h4>
+        <p>Virtual en todo el Perú y presencial en Cusco.</p>
+      </article>
+      <article class="card" data-aos="fade-up" data-aos-delay="100">
+        <h4><i class="fas fa-user-graduate" style="color:var(--gold);"></i> Asesores especializados</h4>
+        <p>Guía práctica y ética, centrada en el aprendizaje.</p>
+      </article>
+      <article class="card" data-aos="fade-up" data-aos-delay="200">
+        <h4><i class="fas fa-calendar-star" style="color:var(--gold);"></i> Desde 2019</h4>
+        <p>Experiencia acompañando a tesistas de diversas carreras.</p>
+      </article>
+      <article class="card" data-aos="fade-up" data-aos-delay="300">
+        <h4><i class="fas fa-comments" style="color:var(--gold);"></i> Respuesta rápida</h4>
+        <p>Contacta por WhatsApp y agenda tu reunión.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <h3 class="section-title" data-aos="fade-right">Preguntas frecuentes</h3>
+    <div class="faq-container">
+      <details data-aos="fade-up" data-aos-delay="0">
+        <summary>¿Trabajan con todas las universidades?</summary>
+        <p>Sí. Adaptamos el formato y requisitos a tu institución, pública o privada.</p>
+      </details>
+      <details data-aos="fade-up" data-aos-delay="100">
+        <summary>¿La asesoría es virtual o presencial?</summary>
+        <p>Ambas. Podemos reunirnos por videollamada o en oficina en Cusco.</p>
+      </details>
+      <details data-aos="fade-up" data-aos-delay="200">
+        <summary>¿Qué incluye el apoyo con Turnitin?</summary>
+        <p>Revisión de similitud y plan de mejoras para reducir coincidencias.</p>
+      </details>
+      <details data-aos="fade-up" data-aos-delay="300">
+        <summary>¿Pueden ayudarme a preparar la sustentación?</summary>
+        <p>Sí: guion, presentación y ensayos para comunicar con seguridad.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <h3 class="section-title" data-aos="fade-right">Contacto</h3>
+    <div class="card" style="display:grid;grid-template-columns:1.3fr 1fr;gap:30px; padding: 30px;" data-aos="fade-up">
+      <div>
+        <p style="margin:0 0 20px; line-height: 1.6;">Agenda una reunión virtual o presencial. Respuesta en breve.</p>
+        <ul style="list-style:none;padding:0;margin:0;display:grid;gap:12px;font-size:15px">
+          <li><strong><i class="fas fa-phone" style="color:var(--gold);"></i> WhatsApp:</strong> <a id="waLink" href="https://wa.me/51939359278" target="_blank" rel="noopener">+51 939 359 278</a></li>
+          <li><strong><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Dirección:</strong> Av. de la Cultura N° 105, frente a la UNSAAC, Cusco, Perú</li>
+          <li><strong><i class="fas fa-clock" style="color:var(--gold);"></i> Horario:</strong> Lun–Sáb · 9:00 – 19:00</li>
+          <li><strong><i class="fab fa-facebook" style="color:var(--gold);"></i> Facebook:</strong> <a href="https://www.facebook.com/ConsultoriaSigmaPeru" target="_blank" rel="noopener">/ConsultoriaSigmaPeru</a></li>
+          <li><strong><i class="fab fa-instagram" style="color:var(--gold);"></i> Instagram:</strong> <a href="https://www.instagram.com/sigma_consultores_peru/" target="_blank" rel="noopener">@sigma_consultores_peru</a></li>
+        </ul>
+        <div class="social-links">
+          <a href="https://www.facebook.com/ConsultoriaSigmaPeru" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sigma_consultores_peru/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/51939359278" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <form id="contactForm">
+        <div class="field">
+          <label for="fNombre">Nombre</label>
+          <input id="fNombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="field">
+          <label for="fEmail">Correo electrónico</label>
+          <input id="fEmail" type="email" placeholder="tu.correo@ejemplo.com" required>
+        </div>
+        <div class="field">
+          <label for="fCarrera">Carrera / Programa</label>
+          <input id="fCarrera" placeholder="Ej. Psicología, Maestría en Educación">
+        </div>
+        <div class="field">
+          <label for="fNecesidad">¿Qué necesitas?</label>
+          <textarea id="fNecesidad" rows="3" placeholder="Formato APA/Vancouver/ISO, Turnitin, ensayos de sustentación, etc."></textarea>
+        </div>
+        <button class="btn primary" type="submit">Enviar información <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div>
+        <div class="brand">
+          <!-- Logo en el footer -->
+          <img src="imagen/sigma.png" alt="Logo Sigma" class="logo" style="object-fit: contain; padding: 5px;">
+          <h1>Sigma · Asesoría de Tesis</h1>
+        </div>
+        <p class="mini">Asesoría educativa ética y personalizada. © <span id="year"></span> Sigma. Todos los derechos reservados.</p>
+      </div>
+      <div>
+        <div class="mini"><strong>Oficina:</strong><br/>Av. de la Cultura N° 105, frente a la UNSAAC, Cusco</div>
+      </div>
+      <div>
+        <div class="mini"><strong>Contacto:</strong><br/>Whatsapp: +51 939 359 278<br/>Email: contacto@sigma.pe</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta">
+    <a class="float" id="floatWA" href="https://wa.me/51939359278" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+
+  <!-- Modal de confirmación -->
+  <div class="modal" id="confirmationModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      <h3 class="modal-title">¡Gracias por contactarnos!</h3>
+      <p>Hemos recibido tu información. Nos comunicaremos contigo a la brevedad.</p>
+      <div class="cta-row" style="margin-top: 20px;">
+        <button class="btn primary" id="modalButton">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Inicializar AOS con fallback
-    try {
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-      });
-    } catch (e) {
-      console.log('AOS no pudo cargar, continuando sin animaciones');
-    }
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
 
-    // El resto del JavaScript permanece igual
     // Año dinámico en el footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1003,7 +1085,145 @@
       }
     });
 
-    // ... (resto del JavaScript igual) ...
+    // Manejo de subida de imágenes
+    const imageUpload = document.getElementById('imageUpload');
+    const imagePreview = document.getElementById('imagePreview');
+    
+    imageUpload.addEventListener('change', function() {
+      imagePreview.innerHTML = '';
+      for (const file of this.files) {
+        const reader = new FileReader();
+        const previewItem = document.createElement('div');
+        previewItem.className = 'preview-item';
+        
+        const removeBtn = document.createElement('button');
+        removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+        removeBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          previewItem.remove();
+        });
+        
+        reader.onload = function(e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          previewItem.appendChild(img);
+          previewItem.appendChild(removeBtn);
+          imagePreview.appendChild(previewItem);
+        }
+        
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Construcción de mensaje para WhatsApp desde el formulario rápido del hero
+    const waNumber = '51939359278'; // cambiar aquí si se actualiza
+
+    function buildWaLink({nombre, email, nivel, etapa, mensaje}){
+      const text = `Hola, soy ${nombre}. Correo: ${email}. Nivel: ${nivel}. Etapa: ${etapa}. ${mensaje ? 'Necesito: '+mensaje : ''} (Contacto desde la web de Sigma)`;
+      const encoded = encodeURIComponent(text);
+      return `https://wa.me/${waNumber}?text=${encoded}`;
+    }
+
+    // Envío de formulario a Google Sheets
+    // REEMPLAZA LA SIGUIENTE URL CON LA QUE OBTENGAS DE GOOGLE APPS SCRIPT
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzlWgaL5ewKD44x24Bd9S9omiOM3-Y94UCl0TRsLiIj-4rr3N1JxUxTxDBTfSj4qwN2/exec';
+    
+    document.getElementById('quickForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      
+      const nombre = document.getElementById('nombre').value.trim() || 'Tesista';
+      const email = document.getElementById('email').value.trim();
+      const nivel = document.getElementById('nivel').value;
+      const etapa = document.getElementById('etapa').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+      
+      // Crear FormData para enviar a Google Sheets
+      const formData = new FormData();
+      formData.append('nombre', nombre);
+      formData.append('email', email);
+      formData.append('nivel', nivel);
+      formData.append('etapa', etapa);
+      formData.append('mensaje', mensaje);
+      formData.append('timestamp', new Date().toISOString());
+      
+      // Enviar datos a Google Sheets
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+          console.log('Success!', response);
+          // Mostrar modal de confirmación
+          document.getElementById('confirmationModal').classList.add('active');
+          
+          // También enviar por WhatsApp (opcional)
+          const url = buildWaLink({nombre, email, nivel, etapa, mensaje});
+          window.open(url, '_blank');
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          // En caso de error, solo enviar por WhatsApp
+          const url = buildWaLink({nombre, email, nivel, etapa, mensaje});
+          window.open(url, '_blank');
+        });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      
+      const n = document.getElementById('fNombre').value.trim() || 'Tesista';
+      const e = document.getElementById('fEmail').value.trim();
+      const c = document.getElementById('fCarrera').value.trim();
+      const t = document.getElementById('fNecesidad').value.trim();
+      
+      // Crear FormData para enviar a Google Sheets
+      const formData = new FormData();
+      formData.append('nombre', n);
+      formData.append('email', e);
+      formData.append('carrera', c);
+      formData.append('necesidad', t);
+      formData.append('timestamp', new Date().toISOString());
+      
+      // Enviar datos a Google Sheets
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+          console.log('Success!', response);
+          // Mostrar modal de confirmación
+          document.getElementById('confirmationModal').classList.add('active');
+          
+          // También enviar por WhatsApp (opcional)
+          const text = `Hola, soy ${n}. Correo: ${e}. Programa: ${c || '—'}. Necesito apoyo en: ${t || '—'}. (Contacto desde la web de Sigma)`;
+          const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+          window.open(url,'_blank');
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          // En caso de error, solo enviar por WhatsApp
+          const text = `Hola, soy ${n}. Correo: ${e}. Programa: ${c || '—'}. Necesito apoyo en: ${t || '—'}. (Contacto desde la web de Sigma)`;
+          const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+          window.open(url,'_blank');
+        });
+    });
+
+    // Cerrar modal
+    document.getElementById('modalClose').addEventListener('click', () => {
+      document.getElementById('confirmationModal').classList.remove('active');
+    });
+    
+    document.getElementById('modalButton').addEventListener('click', () => {
+      document.getElementById('confirmationModal').classList.remove('active');
+    });
+
+    // Botones de CTA que hacen scroll suave
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        if(id.length>1){
+          const el = document.querySelector(id);
+          if(el){ 
+            e.preventDefault(); 
+            el.scrollIntoView({behavior:'smooth', block:'start'}); 
+          }
+        }
+      });
+    });
   </script>
 </body>
 </html>
